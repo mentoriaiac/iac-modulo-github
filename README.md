@@ -4,6 +4,10 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 
+Precisa colocar a variável GITHUB_TOKEN com o token github com permissão de repositório.
+
+A organização precisa ter ao menos um repositório. 
+
 ## Providers
 
 | Name | Version |
