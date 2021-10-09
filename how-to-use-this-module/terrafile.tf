@@ -1,11 +1,6 @@
-module "module_name" {
+module "github_teams_members" {
   source       = "../"
-  programa     = "mentoria-iac"
-  ferramenta_1 = "docker"
-  ferramenta_2 = "puppet"
-}
-
-
-output "ferramentas" {
-  value = module.module_name.ferramentas
+  organization     = "teste-team-module"
+  team_members = ["user1", "user2"]
+  team_name = "developers"
 }

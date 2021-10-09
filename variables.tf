@@ -1,14 +1,15 @@
-variable "programa" {
-  description = "exemplo de variavel"
-  default     = "mentoria-iac"
+variable "organization" {
+  description = "(Required)This is the target GitHub organization"
+  type        = string
 }
 
-variable "ferramenta_1" {
-  description = "exemplo de variavel"
-  default     = "terraform"
+variable "team_members" {
+  description = "List of team members"
+  type        = list(string)
+  default     = []  
 }
 
-variable "ferramenta_2" {
-  description = "exemplo de variavel"
-  default     = "ansible"
+variable "team_name" {
+  description = "the team's full name"
+  type        = string
 }

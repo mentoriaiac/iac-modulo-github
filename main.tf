@@ -1,9 +1,26 @@
-resource "local_file" "ferramenta-1" {
-  content  = "${var.programa} - Estudos ${var.ferramenta_1}"
-  filename = "${path.root}/${var.ferramenta_1}.txt"
+provider "github" {
+  owner = var.organization
 }
 
-resource "local_file" "ferramenta-2" {
-  content  = "${var.programa} - Estudos ${var.ferramenta_2}"
-  filename = "${path.root}/${var.ferramenta_2}.txt"
+data "github_team" "team" {
+  slug = var.team_name
+}
+
+data "github_repositories" "repositories" {
+  query = "org:${var.organization} language:all"
+}
+
+resource "github_team_membership" "team_membership" {
+  for_each =  toset(var.team_members)
+  team_id  = data.github_team.team.id
+  username = each.value
+  role     = "member"
+}
+
+
+resource "github_team_repository" "manage_access_repository" {
+  for_each = toset(data.github_repositories.repositories.names[*])
+  team_id    = data.github_team.team.id
+  repository = each.key
+  permission = "admin"
 }
