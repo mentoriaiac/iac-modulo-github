@@ -5,7 +5,7 @@ variable "organization" {
 
 variable "team_members" {
   description = "List of team members"
-  type        = list(string) 
+  type        = list(string)
 }
 
 variable "team_name" {
