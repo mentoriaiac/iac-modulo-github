@@ -1,62 +1,40 @@
-##  Template Modulo Terraform
-Este repositorio deve conter a estrutura básica para a criação de uma modulo do [terraform](https://www.terraform.io/). 
-
- $`` module-example/``
- 
- |--- main.tf  
- |--- variable.tf  
- |--- outputs.tf  
- |--- version.tf
-
- Esses são os nomes de arquivos recomendados para um modulo mínimo, mesmo se estiverem vazios. 
- 
- ``main.tf`` deve ser o ponto de entrada principal.
- Para um modulo simples, pode ser aqui que todos os recursos que são criados. Para uma modulo complexo pode ser divido em varios arquivos.
- 
- ``variables.tf e outputs.tf`` deve conter as declarações das variaves e as saidas respectivamente.
- 
- ``versions.tf`` deve contem as versões dos recursos/provedores
-
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| Terraform | >= 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+
+Precisa colocar a variável GITHUB_TOKEN com o token github com permissão de repositório.
+
+A organização precisa ter ao menos um repositório. 
 
 ## Providers
-  
+
 | Name | Version |
 |------|---------|
-| local | n/a |
+| <a name="provider_github"></a> [github](#provider\_github) | n/a |
+
+## Modules
+
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| local_file | resource |
-| local_file | data source |
+| [github_team_membership.team_membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_membership) | resource |
+| [github_team_repository.manage_access_repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_repository) | resource |
+| [github_repositories.repositories](https://registry.terraform.io/providers/hashicorp/github/latest/docs/data-sources/repositories) | data source |
+| [github_team.team](https://registry.terraform.io/providers/hashicorp/github/latest/docs/data-sources/team) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|ferramenta_1 | exemplo de variavel | `string` | `"terraform"` | no |
-|ferramenta_2 | exemplo de variavel | `string` | `"ansible"` | no |
-|programa | exemplo de variavel | `string` | `"mentoria-iac"` | no |
+| <a name="input_organization"></a> [organization](#input\_organization) | (Required)This is the target GitHub organization | `string` | n/a | yes |
+| <a name="input_team_members"></a> [team\_members](#input\_team\_members) | List of team members | `list(string)` | n/a | yes |
+| <a name="input_team_name"></a> [team\_name](#input\_team\_name) | the team's full name | `string` | n/a | yes |
 
 ## Outputs
- 
-| Name | Description |
-|------|-------------|
-|ferramentas | exemplo de saida |
 
-## Testar localmente
-
-Aqui você descreve como a pessoa que utilizar esse módulo pode testar localmente. Coloque todos os detalhes necessários para executar localmente.
-
-## Exemplos
-
-A pasta ``how-to-use-this-module`` contém exemplos de utilização do módulo. Esta abordagem é interessante para auxiliar na exeperiência de quem for utilizar este módulo no futuro. Já foi criado um arquivo terraform chamado `terrafile.tf` e ele deve ser usado como referência pra colocar dentro deste diretório de exemplos.
-
-
-  
+No outputs.
