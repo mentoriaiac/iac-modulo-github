@@ -7,7 +7,7 @@ e este projeto segue o [Versionamento Semântico](https://semver.org/lang/pt-BR/
 
 ## [Não publicado]
 
-## [0.1.0] - 2021-09-08
+## [0.1.0] - 2021-10-09
 ### Adicionado
 
 - Criando a versão 0.1.0 do modulo github [[GH-1]](https://github.com/mentoriaiac/iac-modulo-github/pull/1)
