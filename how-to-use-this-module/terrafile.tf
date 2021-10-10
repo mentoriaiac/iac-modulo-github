@@ -1,6 +1,6 @@
 module "github_teams_members" {
   source       = "../"
-  organization     = "teste-team-module"
+  organization     = "mentoriaiactest"
   team_members = ["user1", "user2"]
   team_name = "developers"
 }
