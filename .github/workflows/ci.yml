@@ -38,7 +38,7 @@ jobs:
     name: "Applying in Test"
     runs-on: ubuntu-18.04
     env:
-      GITHUB_TOKEN: ${TF_GITHUB_TOKEN}
+      GITHUB_TOKEN:  ${{ secrets.TF_GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -72,7 +72,6 @@ jobs:
         run: terraform plan -no-color
 
       - name: Terraform - applying in test organization
-        id: apply
-        
+        id: apply        
         working-directory: ./how-to-use-this-module
         run: terraform apply -auto-approve -no-color
