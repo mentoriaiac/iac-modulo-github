@@ -1,5 +1,5 @@
 variable "organization" {
-  default = "teste-team-module"
+  default = "mentoriaiactest"
 }
 module "github_teams_members" {
   source       = "../"
