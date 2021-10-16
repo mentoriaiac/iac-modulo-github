@@ -1,9 +1,9 @@
 variable "organization" {
-  default = "mentoriaiactest"
+  default = "teste-team-module"
 }
 module "github_teams_members" {
   source       = "../"
-  organization     = var.organization
+  organization = var.organization
   team_members = ["user1", "user2"]
-  team_name = "developers"
+  team_name    = "moderadores"
 }
