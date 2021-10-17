@@ -33,3 +33,7 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+      
+      - name: Tfsec Validate
+        id: tfsec
+        run: docker run --rm -v $PWD:/app -w /app tfsec/tfsec:v0.58 .
