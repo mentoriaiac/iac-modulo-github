@@ -5,7 +5,8 @@ on:
     branches:
       - main
   pull_request:
-
+    types: [closed]
+    
 jobs:
   terraform_module:
     name: "Unit Tests"
@@ -75,3 +76,7 @@ jobs:
         id: apply        
         working-directory: ./how-to-use-this-module
         run: terraform apply -auto-approve -no-color
+      - name: Tfsec Validate
+        id: tfsec
+        run: docker run --rm -v $PWD:/app -w /app tfsec/tfsec:v0.58 .
+
