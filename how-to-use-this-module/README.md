@@ -19,6 +19,12 @@ GITHUB_TOKEN = <seu_token>
 
 ### Primeiro Passo:
 
+Acesse este repósitorio:
+
+```
+cd ./how-to-use-this-module/
+```
+
 Inicialize o Terraform
 ```
 terraform init
