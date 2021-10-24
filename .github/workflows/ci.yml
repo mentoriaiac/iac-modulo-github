@@ -5,7 +5,6 @@ on:
     branches:
       - main
   pull_request:
-    types: [closed]
     
 jobs:
   terraform_module:
@@ -42,6 +41,7 @@ jobs:
   terraform_how_to_use:
     name: "Applying in Test"
     runs-on: ubuntu-18.04
+    if: ${{ github.event_name == 'push' }}
     env:
       GITHUB_TOKEN:  ${{ secrets.TF_GITHUB_TOKEN }}
 
