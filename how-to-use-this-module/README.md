@@ -6,7 +6,7 @@ Repositório IaC para o módulo github
 Para realizar os teste localmente é necessário:
 
 ```
-terraform >= 1.0.0
+make terraform >= 1.0.0
 GITHUB_TOKEN = <seu_token>
 ```
 
@@ -27,7 +27,7 @@ cd ./how-to-use-this-module/
 
 Inicialize o Terraform
 ```
-terraform init
+make terraform-init
 ```
 
 ### Segundo Passo:
@@ -41,7 +41,7 @@ team_name    = "developers"
 
 Tente criar o primeiro plan:
 ```
-terraform plan
+make terraform-plan
 ```
 
 Obs.: Caso retorne erro 401, verifique seu GITHUB_TOKEN. Caso 404 verique a permissão que possui dentro da organização. 
@@ -50,5 +50,5 @@ Obs.: Caso retorne erro 401, verifique seu GITHUB_TOKEN. Caso 404 verique a perm
 
 Aplique suas mudanças:
 ```
-terraform apply
+make terraform-apply
 ```
