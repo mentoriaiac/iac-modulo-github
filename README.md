@@ -37,4 +37,8 @@ No modules.
 
 ## Outputs
 
-No outputs!
+No outputs.
+
+## Como usar este módulo:
+
+Para saber mais como usar este modulo [acesse este documento](how-to-use-this-module/README.md)
