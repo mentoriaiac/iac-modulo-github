@@ -1,7 +1,8 @@
 name: "Terraform Valida Modulo"
 on:
   push:
-    - main
+    branches:
+      - main
   pull_request:
 jobs:
   terraform:
