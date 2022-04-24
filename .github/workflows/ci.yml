@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   terraform:
-      uses: "mentoriaiac/cicd_centralizado/.github/workflows/terraform_valida_modulo.yaml@v1"
+      uses: "EzzioMoreira/cicd_centralizado/.github/workflows/terraform_valida_modulo.yaml@feat/add-actions-terraform"
       with: 
         tf_version: "1.0.0"
         os_version: "ubuntu-20.04"
